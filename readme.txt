@@ -1,5 +1,5 @@
 ﻿=== My-Readers-Wall ===
-Contributors: outsider,outsiderla@yahoo.cn
+Contributors: outsider
 Tags: 读者墙, readers-wall,outsider,My-Readers-Wall
 Requires at least: 3.2
 Tested up to: 3.2.1
