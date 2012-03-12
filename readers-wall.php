@@ -73,7 +73,7 @@ function readers_wall() {
 
         else
             $url = "#";
-        $avatar = get_avatar($comment->comment_author_email, $size = '35', $default = get_bloginfo('url') . '/images/outsider.jpg');
+        $avatar = get_avatar($comment, 35);
 
         $tmp = "<li><a target=\"_blank\" href=\"" . $comment->comment_author_url . "\">" . $avatar . "<em>" . $comment->comment_author . "</em> <strong>+" . $comment->cnt . "</strong></br>" . $comment->comment_author_url . "</a></li>";
 
@@ -89,6 +89,7 @@ function readers_css() {
     $o_color = get_option('sh_r_color');
     return "
 	<style type='text/css'>
+    .readers-list img{border:none;}
 	.readers-list{line-height: 150%;text-align:left;overflow:hidden;_zoom:1}
     .readers-list li{width:200px;float:left;*margin-right:-1px}
     .readers-list a,.readers-list a:hover strong{background-color:#f2f2f2;background-image:-webkit-linear-gradient(#f8f8f8,#f2f2f2);background-image:-moz-linear-gradient(#f8f8f8,#f2f2f2);background-image:linear-gradient(#f8f8f8,#f2f2f2)}
@@ -105,6 +106,5 @@ function readers_css() {
 	";
 }
 
-//add_action('wp_head', 'readers_css');
 add_shortcode('readers', 'readers_wall');
 ?>
